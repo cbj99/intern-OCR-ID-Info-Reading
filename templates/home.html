@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title name="tab-title">China ID info reading app by Baijun Chen</title>
+    <link rel="stylesheet" media="screen and (min-width: 768px)" type="text/css" href="{{ url_for('static', filename='main_pc.css') }}">
+    <link rel="stylesheet" media="screen and (max-width: 768px)" type="text/css" href="{{ url_for('static', filename='main_mobile.css') }}">
+</head>
+
+<body>
+    <h2>身份证图片信息提取</h2>
+    <form id="fileUploadForm" method='post' enctype='multipart/form-data' action='/uploader'>
+        <input type="file" multiple="" name="file[]" id="fileSelect">
+        <button type="submit" id="btnSubmit">Upload</button>
+    </form>
+
+    <table>
+        <tr>
+            <th style="width: 6vw;">姓名</th>
+            <th style="width: 6vw;">性别</th>
+            <th style="width: 6vw;">民族</th>
+            <th style="width: 12vw;">出生日期</th>
+            <th style="width: 30vw;">住址</th>
+            <th style="width: 15vw;">公民身份号码</th>
+        </tr>
+        {%for row in data%}
+        <tr>
+            <td> {{row['姓名']}} </td>
+            <td> {{row['性别']}} </td>
+            <td> {{row['民族']}} </td>
+            <td> {{row['出生日期']}} </td>
+            <td> {{row['住址']}} </td>
+            <td> {{row['公民身份号码']}} </td>
+        </tr>
+        {%endfor%}
+    </table>
+</body>
+
+</html>
