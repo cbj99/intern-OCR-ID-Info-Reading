@@ -125,7 +125,6 @@ def upload_file():
     return render_template('home.html', data=table)
     # return redirect('/uploads/'+'output.csv') 
         
-    return ''
 
 if __name__ == '__main__':
     app.run(debug=True)
