@@ -116,7 +116,7 @@ def upload_file():
                 row['民族'] = all_info[index_3+2: index_4]
                 row['出生日期'] = all_info[index_4+2: index_5]
                 row['住址'] = all_info[index_5+2: index_6]
-                row['公民身份号码'] = all_info[index_6+6: -1]
+                row['公民身份号码'] = all_info[index_6+6:]
                 table.append(row)
                 row = {}
                 all_info=''
